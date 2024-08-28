@@ -26,4 +26,13 @@ let buscarMensagens = async (idsala, timestamp) => {
     return [];
 }
 
-module.exports = { listarSalas, buscarSala, atualizarMensagens, buscarMensagens };
+let removerUsuario = async (iduser) => {
+    let user = await db.findOne("Usuario", iduser);
+    if (user) {
+        user.sala = null;
+        return await db.updateOne("Usuario", user, { _id: user._id });
+    }
+    return false;
+}
+
+module.exports = { listarSalas, buscarSala, atualizarMensagens, buscarMensagens, removerUsuario };

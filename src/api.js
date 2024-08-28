@@ -67,4 +67,13 @@ app.use("/sala/listar", router.get("/sala/listar", async (req, res) => {
     res.status(200).send(resp);
 }));
 
+app.use("/sala/sair", router.post("/sala/sair", async (req, res) => {
+    const token = require("./util/token");
+    const salaController = require("./controllers/salacontroller");
+    if (!token.checkToken(req.headers.token, req.headers.iduser, req.headers.nick)) return false;
+    
+    let resp = await salaController.sair(req.headers.iduser);
+    res.status(200).send(resp);
+}));
+
 module.exports=app;

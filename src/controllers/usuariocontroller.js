@@ -12,6 +12,10 @@ exports.entrar = async (nick) => {
     }
 }
 
+exports.sair = async (idUser) => {
+    return await usuarioModel.removerUsuario(idUser);
+}
+
 exports.get = async (req, res) => {
     return await salaModel.listarSalas();
 }
