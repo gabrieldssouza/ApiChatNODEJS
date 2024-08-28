@@ -1,0 +1,29 @@
+{
+  "name": "chat-api",
+  "version": "1.0.0",
+  "description": "chat pt 2",
+  "main": "index.js",
+  "bin": {
+    "chat-api": "bin/server.js"
+  },
+  "scripts": {
+    "start": "nodemon ./bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "mongo",
+    "chat",
+    "info"
+  ],
+  "author": "Gabriel SOuza",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0",
+    "mysql2": "^3.10.2",
+    "nodemon": "^3.1.4"
+  }
+}
