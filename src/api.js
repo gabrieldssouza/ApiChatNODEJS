@@ -7,6 +7,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use(cors());
+app.options('*', cors());
 
 const router = express.Router();
 app.use('/', router.get('/', (req, res) => {
