@@ -1,9 +1,12 @@
 var express = require("express");
 var app = express();
+const cors = require('cors');
 const usuarioController = require('./controllers/usuariocontroller');
 const salaController = require('./controllers/salacontroller'); 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+
+app.use(cors());
 
 const router = express.Router();
 app.use('/', router.get('/', (req, res) => {
